@@ -4,7 +4,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "eslint:fix":"",
+    "start:dev": "nodemon app/src/server",
+    "start": "node app/src/server",
+    "lint:fix": "eslint --fix app/src/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -18,16 +20,19 @@
   },
   "husky": {
     "hooks": {
-        "pre-commit": "pretty-quick --staged"
+      "pre-commit": "pretty-quick --staged"
     }
   },
   "homepage": "https://github.com/raulsoledispa/image-uploader-svc#readme",
   "devDependencies": {
     "eslint": "^7.30.0",
-    "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-prettier": "^3.4.0",
+    "nodemon": "^2.0.12",
     "prettier": "^2.3.2"
+  },
+  "dependencies": {
+    "fastify": "^3.19.0"
   }
 }
