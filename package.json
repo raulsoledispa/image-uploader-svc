@@ -33,6 +33,7 @@
     "prettier": "^2.3.2"
   },
   "dependencies": {
+    "dotenv": "^10.0.0",
     "fastify": "^3.19.0"
   }
 }
