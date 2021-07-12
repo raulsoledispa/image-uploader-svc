@@ -1,4 +1,4 @@
-const fastify = require('fastify')({ looger: true });
+const fastify = require('fastify')({ logger: true });
 
 fastify.get('/api/images', async (req, reply) => ({ data: [] }));
 const start = async () => {
