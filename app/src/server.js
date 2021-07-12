@@ -1,6 +1,10 @@
 const fastify = require('fastify')({ logger: true });
-const serverConfig = require('./config');
-fastify.get('/api/images', async (req, reply) => ({ data: [] }));
+const multer = require('fastify-multer');
+const { serverConfig } = require('./config');
+const imageRoute = require('./imagesRoutes');
+
+fastify.register(multer.contentParser);
+fastify.register(imageRoute);
 const start = async () => {
   try {
     await fastify.listen(serverConfig.PORT, '0.0.0.0');
